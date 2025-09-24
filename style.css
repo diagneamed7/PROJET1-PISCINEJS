@@ -1,0 +1,158 @@
+/* ==============================
+   Bibliothèque — style.css
+   Thème clair et moderne
+   ============================== */
+
+:root {
+    --bg: #f9fafb;
+    --card: #fff;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --success: #16a34a;
+    --warn: #d97706;
+    --err: #dc2626;
+    --border: #e5e7eb;
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    padding: 20px;
+    line-height: 1.5;
+}
+
+header {
+    padding: 16px 20px;
+    background: #0f172a;
+    color: #fff;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+main {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    margin-bottom: 12px;
+}
+
+section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+form input, form select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+}
+
+form button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background: #1d4ed8;
+}
+
+/* ================== Listes ================== */
+#liste-livres, #liste-utilisateurs, #liste-emprunts {
+    border-top: 1px solid var(--border);
+}
+
+/* Cartes et listes (alignés avec index.html) */
+.list {
+    display: grid;
+    gap: 8px;
+}
+
+.card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+.row { display: flex; gap: 8px; align-items: center; }
+.muted { color: var(--muted); font-size: 12px; }
+.pill { background: #f1f5f9; color: #0f172a; border-radius: 999px; padding: 2px 8px; font-size: 12px; }
+
+button.secondary {
+    background: #fff;
+    color: #0f172a;
+    border: 1px solid #0f172a;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover {
+    background: #f3f4f6;
+}
+
+button.small {
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.green { background: #dcfce7; color: #166534; }
+.yellow { background: #fef9c3; color: #92400e; }
+.red { background: #fee2e2; color: #991b1b; }
+
+/* Responsive */
+@media (max-width: 720px) {
+    form { flex-direction: column; }
+}

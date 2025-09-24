@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliothèque</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <script>
+        // Small helper to show JS-disabled warning until script.js loads
+        document.documentElement.classList.add('js-enabled');
+    </script>
+    <noscript>
+        <style>main{display:none}</style>
+    </noscript>
 </head>
 <body>
-    <!-- Section Livres -->
-    <section id="livres">
-        <h2>Gestion des Livres</h2>
-        <form id="form-livre">
-            <!-- Formulaire d'ajout livre -->
-        </form>
-        <div id="liste-livres">
-            <!-- Liste des livres -->
-        </div>
-    </section>
+    <header>
+        <h1>Bibliothèque</h1>
+        <p class="muted">Gestion des livres, utilisateurs et emprunts</p>
+    </header>
+    <main>
+        <section id="livres">
+            <h2>Gestion des Livres</h2>
+            <form id="form-livre" autocomplete="off">
+                <input id="livre-titre" name="titre" type="text" placeholder="Titre" required>
+                <input id="livre-auteur" name="auteur" type="text" placeholder="Auteur" required>
+                <input id="livre-quantite" name="quantite" type="number" min="1" step="1" placeholder="Quantité" required>
+                <button type="submit">Ajouter le livre</button>
+            </form>
+            <div id="liste-livres" class="list" aria-live="polite"></div>
+        </section>
 
-    <!-- Section Utilisateurs -->
-    <section id="utilisateurs">
-        <h2>Gestion des Utilisateurs</h2>
-        <form id="form-utilisateur">
-            <!-- Formulaire d'ajout utilisateur -->
-        </form>
-        <div id="liste-utilisateurs">
-            <!-- Liste des utilisateurs -->
-        </div>
-    </section>
+        <section id="utilisateurs">
+            <h2>Gestion des Utilisateurs</h2>
+            <form id="form-utilisateur" autocomplete="off">
+                <input id="util-nom" name="nom" type="text" placeholder="Nom" required>
+                <input id="util-prenom" name="prenom" type="text" placeholder="Prénom" required>
+                <input id="util-email" name="email" type="email" placeholder="Email" required>
+                <button type="submit">Ajouter l'utilisateur</button>
+            </form>
+            <div id="liste-utilisateurs" class="list" aria-live="polite"></div>
+        </section>
 
-    <!-- Section Emprunts -->
-    <section id="emprunts">
-        <h2>Gestion des Emprunts</h2>
-        <form id="form-emprunt">
-            <!-- Formulaire d'emprunt -->
-        </form>
-        <div id="liste-emprunts">
-            <!-- Liste des emprunts -->
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+        <section id="emprunts">
+            <h2>Gestion des Emprunts</h2>
+            <form id="form-emprunt">
+                <select id="emp-user" name="user" required></select>
+                <select id="emp-livre" name="livre" required></select>
+                <button type="submit">Emprunter</button>
+            </form>
+            <div id="liste-emprunts" class="list" aria-live="polite"></div>
+        </section>
+    </main>
 </body>
 </html>
