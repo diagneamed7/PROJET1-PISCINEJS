@@ -55,5 +55,32 @@
             <div id="liste-emprunts" class="list" aria-live="polite"></div>
         </section>
     </main>
+    <div id="modal" aria-hidden="true">
+        <div class="modal-backdrop" onclick="fermerModal()"></div>
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <div class="modal-header">
+                <h3 id="modal-title">Modifier</h3>
+                <button class="small" onclick="fermerModal()">✕</button>
+            </div>
+            <form id="modal-form">
+                <div class="field">
+                    <label id="modal-field-1-label" for="modal-field-1"></label>
+                    <input id="modal-field-1" type="text" required>
+                </div>
+                <div class="field">
+                    <label id="modal-field-2-label" for="modal-field-2"></label>
+                    <input id="modal-field-2" type="text" required>
+                </div>
+                <div class="field" id="modal-field-3-wrap">
+                    <label id="modal-field-3-label" for="modal-field-3"></label>
+                    <input id="modal-field-3" type="text" required>
+                </div>
+                <div class="row" style="justify-content: flex-end; gap: 8px;">
+                    <button type="button" class="small secondary" onclick="fermerModal()">Annuler</button>
+                    <button type="submit" class="small">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
